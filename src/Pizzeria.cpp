@@ -34,7 +34,6 @@ double Pizzeria::calculatePrice(int orderId)
                                    return previousSum + pizza->getPrice();
                                });
     }
-    throw std::invalid_argument("Order with id: " + std::to_string(orderId) + "not found");
 }
 
 void Pizzeria::bakePizzas(int orderId)
@@ -53,7 +52,6 @@ void Pizzeria::bakePizzas(int orderId)
         }
         std::get<Status>(*order) = Status::Baked;
     }
-    throw std::invalid_argument("Order with id: " + std::to_string(orderId) + "not found");
 }
 
 void Pizzeria::completeOrder(int orderId)
@@ -67,7 +65,6 @@ void Pizzeria::completeOrder(int orderId)
         std::cout << "Order " << orderId << " completed" << std::endl;
         std::get<Status>(*order) = Status::Completed;
     }
-    throw std::invalid_argument("Order with id: " + std::to_string(orderId) + "not found");
 }
 
 
